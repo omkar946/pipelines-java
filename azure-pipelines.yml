@@ -15,6 +15,11 @@ trigger:
 - master
 - releases/*  
 
+extends:
+  template: simple-param.yml
+  parameters:
+      yesNo: false # set to a non-boolean value to have the build fail
+
 strategy:
   matrix:
     jdk10_linux:
