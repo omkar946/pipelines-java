@@ -2,9 +2,18 @@
 # Build your Java project and run tests with Apache Maven.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
+# A trigger tells a Pipeline to run.
+#A pipeline is made up of one or more stages. A pipeline can deploy to one or more environments.
+#A stage is a way of organizing jobs in a pipeline and each stage can have one or more jobs.
+#Each job runs on one agent. A job can also be agentless.
+#Each agent runs a job that contains one or more steps.
+#A step can be a task or script and is the smallest building block of a pipeline.
+#A task is a pre-packaged script that performs an action, such as invoking a REST API or publishing a build artifact.
+#An artifact is a collection of files or packages published by a run.
 
 trigger:
 - master
+- releases/*  
 
 strategy:
   matrix:
